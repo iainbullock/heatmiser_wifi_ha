@@ -8,14 +8,14 @@ and take over the responsibility for public maintenance.
 ## Overview
 A [Heatmiser](http://www.heatmiser.com/) WiFi Thermostat Home Assistant plugin.
 
-Original version supports:
+The original version supports:
 * Read current air temperature
 * Read/set temperature setting (i.e. wanted temperature)
 * Read/set on/off of the Thermostat
 
-Original version supported Heatmiser Thermostats are WiFi versions of DT, DT-E, PRT and PRT-E. 
+The original version supports Heatmiser Thermostats are WiFi versions of DT, DT-E, PRT and PRT-E. 
 
-This fork adds support for the PRT-HW WiFi thermostat, and extends the following functionality (for PRT-HW, maybe others):
+This fork adds support for the PRT-HW WiFi thermostat, and adds the following functionality (for PRT-HW, maybe others):
 * TBA 
 * TBA
 
@@ -24,7 +24,7 @@ connected through an Heatmiser Ethernet HUB are supported by the
 [Home Assistant Heatmiser Core component](https://www.home-assistant.io/integrations/heatmiser/)
 
 ## Installation
-Install through [HACS](https://hacs.xyz/).
+Install through [HACS](https://hacs.xyz/) using this Custom Repository: 
 
 Alternatively copy the heatmiser_wifi directory and its contents to the 
 Home Assistant custom_components directory.
