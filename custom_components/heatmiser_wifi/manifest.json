@@ -8,7 +8,7 @@
     "codeowners": [
       "@midstar", "@iainbullock"
     ],
-    "requirements": ["heatmiser_wifi"],
+    "requirements": ["git+https://github.com/iainbullock/heatmiser_wifi"],
     "version": "1.1.0",
     "iot_class": "local_polling"
   }
