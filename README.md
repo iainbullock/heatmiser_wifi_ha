@@ -40,7 +40,8 @@ Add following configuration to Home Assistant configuration.yaml
         friendly_name: <optional  - default 'Heatmiser MODELNO'>
   
 ## See also
-* [Heatmiser Wifi](https://github.com/midstar/heatmiser_wifi) the library used for communication with Heatmiser WiFi. No longer maintained. This project is forked from here. 
+* [Heatmiser Wifi HA](https://github.com/midstar/heatmiser_wifi_ha) No longer maintained. This project is forked from here. 
+* [Heatmiser Wifi](https://github.com/midstar/heatmiser_wifi) The library used for communication with Heatmiser WiFi.
 * [daveNewcastle/Heatmiser-WIFI](https://github.com/daveNewcastle/Heatmiser-WIFI) Heatmiser Wifi Home Assistant Component for older versions of Home Assistant. It has not been updated for many years.
 * [Home Assistant Heatmiser Core component](https://www.home-assistant.io/integrations/heatmiser/) for non WiFi versions of Heatmister Thermostats.
  
