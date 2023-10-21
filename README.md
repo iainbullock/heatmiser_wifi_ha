@@ -24,7 +24,7 @@ connected through an Heatmiser Ethernet HUB are supported by the
 [Home Assistant Heatmiser Core component](https://www.home-assistant.io/integrations/heatmiser/)
 
 ## Installation
-Install through [HACS](https://hacs.xyz/) using this Custom Repository: 
+Install through [HACS](https://hacs.xyz/) using this Custom Repository: https://github.com/iainbullock/heatmiser_wifi_ha
 
 Alternatively copy the heatmiser_wifi directory and its contents to the 
 Home Assistant custom_components directory.
