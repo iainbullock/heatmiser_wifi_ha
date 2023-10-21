@@ -41,7 +41,7 @@ Add following configuration to Home Assistant configuration.yaml
   
 ## See also
 * [Heatmiser Wifi HA](https://github.com/midstar/heatmiser_wifi_ha) No longer maintained. This project is forked from here. 
-* [Heatmiser Wifi](https://github.com/midstar/heatmiser_wifi) The library used for communication with Heatmiser WiFi. I've created a fork of this (https://github.com/iainbullock/heatmiser_wifi) to add the required functionality.
+* [Heatmiser Wifi](https://github.com/midstar/heatmiser_wifi) The library used for communication with Heatmiser WiFi. I've created a fork of this to add the required functionality (https://github.com/iainbullock/heatmiser_wifi).
 * [daveNewcastle/Heatmiser-WIFI](https://github.com/daveNewcastle/Heatmiser-WIFI) Heatmiser Wifi Home Assistant Component for older versions of Home Assistant. It has not been updated for many years.
 * [Home Assistant Heatmiser Core component](https://www.home-assistant.io/integrations/heatmiser/) for non WiFi versions of Heatmister Thermostats.
  
