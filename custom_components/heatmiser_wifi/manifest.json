@@ -1,14 +1,14 @@
 {
     "domain": "heatmiser_wifi",
     "name": "Heatmiser Wifi",
-    "documentation": "https://github.com/midstar/heatmiser_wifi_ha/",
-    "issue_tracker": "https://github.com/midstar/heatmiser_wifi_ha/issues",
+    "documentation": "https://github.com/iainbullock/heatmiser_wifi_ha/",
+    "issue_tracker": "https://github.com/iainbullock/heatmiser_wifi_ha/issues",
     "dependencies": [],
     "after_dependencies": [],
     "codeowners": [
-      "@midstar"
+      "@midstar", "@iainbullock"
     ],
     "requirements": ["heatmiser_wifi"],
-    "version": "1.0.0",
+    "version": "1.1.0",
     "iot_class": "local_polling"
   }
