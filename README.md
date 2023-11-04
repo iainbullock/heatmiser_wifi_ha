@@ -32,12 +32,11 @@ Home Assistant custom_components directory.
 ## Configuration
 Add following configuration to Home Assistant configuration.yaml
 
-    climate:
-    - platform: heatmiser_wifi
-        host:          <mandatory - hostname or ip address>
-        port:          <optional  - default 8068>
-        pin:           <optional  - default 0>
-        friendly_name: <optional  - default 'Heatmiser MODELNO'>
+    heatmiser_wifi:
+      host:          <mandatory - hostname or ip address>
+      port:          <optional  - default 8068>
+      pin:           <optional  - default 0>
+      friendly_name: <optional  - default 'Heatmiser MODELNO'>
   
 ## See also
 * [Heatmiser Wifi HA](https://github.com/midstar/heatmiser_wifi_ha) No longer maintained. This project is forked from here. 
