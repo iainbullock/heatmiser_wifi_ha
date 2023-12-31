@@ -16,12 +16,12 @@ The original version supports:
 The original version supports Heatmiser Thermostats are WiFi versions of DT, DT-E, PRT and PRT-E. 
 
 This fork adds support for the PRT-HW WiFi thermostat, and adds the following functionality (for PRT-HW, maybe others):
-* Various additional sensors in particular to read triggers times and temperatures for heating, and trigger times for hot water 
+* Various additional sensors in particular to read trigger times and temperatures for heating, and trigger times for hot water 
 * Services to write to various parameters including triggers for heating and hot water
 * Set date & time (with an offset if required)
 * Set frost temperature using its own number entity
 * Switch entity for key lock
-* Correct (IMHO) the implementation of Climate Presets, and add a 'Summer' preset. The presets now mimic the same functions in the Heatmiser App
+* Correct (IMHO) the implementation of Climate Presets, and add a 'Summer' preset. The presets now mimic the same functions as found in the Heatmiser iPhone App
 
 Note that non-WiFi thermostat versions (i.e. using RS-485 serial bus) 
 connected through an Heatmiser Ethernet HUB are supported by the
