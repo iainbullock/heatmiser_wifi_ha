@@ -1,0 +1,37 @@
+set_value:
+  fields:
+    name:
+      required: true
+    value:
+      required: true
+
+update_date_time:
+    
+update_triggers:
+  fields:
+    trigger:
+      required: true
+      selector:
+        select:
+          options:
+            - "mon_triggers"
+            - "tue_triggers"  
+            - "wed_triggers"  
+            - "thu_triggers"  
+            - "fri_triggers"  
+            - "sat_triggers"  
+            - "sun_triggers"  
+            - "weekday_triggers"  
+            - "weekend_triggers"  
+            - "mon_hw_triggers"
+            - "tue_hw_triggers"  
+            - "wed_hw_triggers"  
+            - "thu_hw_triggers"  
+            - "fri_hw_triggers"  
+            - "sat_hw_triggers"  
+            - "sun_hw_triggers"  
+            - "weekday_hw_triggers"  
+            - "weekend_hw_triggers"  
+    values:
+      required: true
+
