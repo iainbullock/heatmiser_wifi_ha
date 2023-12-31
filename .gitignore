@@ -9,3 +9,6 @@ doc/build
 htmlcov
 build
 dist
+*.bak
+*.old
+*.prev
