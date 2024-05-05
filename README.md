@@ -1,12 +1,14 @@
-# Heatmiser WiFi Home Assistant Component
+# Heatmiser WiFi Home Assistant Custom Component
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
 This repository is forked from the original (https://github.com/midstar/heatmiser_wifi_ha) and updated for my personal requirements only. Feel free to use it as is or clone 
 and take over the responsibility for public maintenance.
 
+<a href="https://www.buymeacoffee.com/iainbullock" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
 ## Overview
-A [Heatmiser](http://www.heatmiser.com/) WiFi Thermostat Home Assistant plugin.
+A [Heatmiser](http://www.heatmiser.com/) WiFi Thermostat Home Assistant custom component.
 
 The original version supports:
 * Read current air temperature
@@ -49,4 +51,4 @@ Add following configuration to Home Assistant configuration.yaml
 * [Home Assistant Heatmiser Core component](https://www.home-assistant.io/integrations/heatmiser/) for non WiFi versions of Heatmister Thermostats.
  
 ### Author and license
-This component is was written by Joel Midstjärna and licensed under the MIT License. This fork is updated by Iain Bullock and licensed under the MIT License.
+This component was originally written by Joel Midstjärna and licensed under the MIT License. This fork is updated by Iain Bullock and licensed under the MIT License.
