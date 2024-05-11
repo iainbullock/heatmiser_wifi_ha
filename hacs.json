@@ -1,5 +1,5 @@
 {
-    "name": "Heatmiser Wifi ICB",
+    "name": "Heatmiser Wifi",
     "domains": [
         "climate",
         "sensor",
