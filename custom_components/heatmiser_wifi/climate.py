@@ -7,9 +7,8 @@ from heatmiser_wifi import Heatmiser
 from homeassistant.components.climate import (ClimateEntity)
 
 from homeassistant.components.climate.const import (
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_PRESET_MODE, HVAC_MODE_OFF,
-    HVAC_MODE_HEAT, CURRENT_HVAC_OFF, CURRENT_HVAC_HEAT,
-    CURRENT_HVAC_IDLE, PRESET_HOME, PRESET_AWAY)
+    SUPPORT_TARGET_TEMPERATURE, SUPPORT_PRESET_MODE, CURRENT_HVAC_OFF, CURRENT_HVAC_HEAT,
+    CURRENT_HVAC_IDLE, PRESET_HOME, PRESET_AWAY, HVACMode)
 
 from homeassistant.const import (
     ATTR_FRIENDLY_NAME, ATTR_TEMPERATURE, UnitOfTemperature)
@@ -87,12 +86,12 @@ class HeatmiserWifi(ClimateEntity):
     @property
     def hvac_mode(self):
         if self.hass.data[DOMAIN]['heatmiser_info']['on_off'] == 'Off':
-            return HVAC_MODE_OFF
-        return HVAC_MODE_HEAT
+            return HVACMode.OFF
+        return HVACMode.HEAT
 
     @property
     def hvac_modes(self):
-        return [HVAC_MODE_OFF, HVAC_MODE_HEAT]
+        return [HVACMode.OFF, HVACMode.HEAT]
 
     @property
     def preset_mode(self):
@@ -127,9 +126,9 @@ class HeatmiserWifi(ClimateEntity):
 
     def set_hvac_mode(self, hvac_mode):
         on_off = 'On'
-        if hvac_mode == HVAC_MODE_OFF:
+        if hvac_mode == HVACMode.OFF:
             on_off = 'Off'
-        elif hvac_mode != HVAC_MODE_HEAT:
+        elif hvac_mode != HVACMode.HEAT:
             return # Invalid mode return
         self.hass.data[DOMAIN]['heatmiser'].connect()
         self.hass.data[DOMAIN]['heatmiser'].set_value('on_off', on_off)
