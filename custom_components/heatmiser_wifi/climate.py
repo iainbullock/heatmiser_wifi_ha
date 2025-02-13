@@ -7,8 +7,8 @@ from heatmiser_wifi import Heatmiser
 from homeassistant.components.climate import (ClimateEntity)
 
 from homeassistant.components.climate.const import (
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_PRESET_MODE, CURRENT_HVAC_OFF, CURRENT_HVAC_HEAT,
-    CURRENT_HVAC_IDLE, PRESET_HOME, PRESET_AWAY, HVACMode)
+    SUPPORT_TARGET_TEMPERATURE, SUPPORT_PRESET_MODE,
+    PRESET_HOME, PRESET_AWAY, HVACMode, HVACAction)
 
 from homeassistant.const import (
     ATTR_FRIENDLY_NAME, ATTR_TEMPERATURE, UnitOfTemperature)
@@ -111,10 +111,10 @@ class HeatmiserWifi(ClimateEntity):
     @property
     def hvac_action(self):
         if self.hass.data[DOMAIN]['heatmiser_info']['on_off'] == 'Off':
-            return CURRENT_HVAC_OFF
+            return HVACAction.OFF
         elif self.hass.data[DOMAIN]['heatmiser_info']['heating_is_currently_on']:
-            return CURRENT_HVAC_HEAT
-        return CURRENT_HVAC_IDLE
+            return HVACAction.HEATING
+        return HVACAction.IDLE
 
     def set_temperature(self, **kwargs):
         temperature = kwargs.get(ATTR_TEMPERATURE)
