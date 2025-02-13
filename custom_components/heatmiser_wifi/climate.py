@@ -12,8 +12,7 @@ from homeassistant.components.climate.const import (
     CURRENT_HVAC_IDLE, PRESET_HOME, PRESET_AWAY)
 
 from homeassistant.const import (
-    TEMP_CELSIUS, TEMP_FAHRENHEIT, 
-    ATTR_FRIENDLY_NAME, ATTR_TEMPERATURE)
+    ATTR_FRIENDLY_NAME, ATTR_TEMPERATURE, UnitOfTemperature)
 
 import logging
 _LOGGER = logging.getLogger(__name__)
@@ -48,8 +47,8 @@ class HeatmiserWifi(ClimateEntity):
     @property
     def temperature_unit(self):
         if self.hass.data[DOMAIN]['heatmiser_info']['temperature_format'] == 'Celsius':
-            return TEMP_CELSIUS
-        return TEMP_FAHRENHEIT
+            return UnitOfTemperature.CELSIUS
+        return UnitOfTemperature.FAHRENHEIT
 
     @property
     def current_temperature(self):
