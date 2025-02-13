@@ -7,8 +7,7 @@ from heatmiser_wifi import Heatmiser
 from homeassistant.components.climate import (ClimateEntity)
 
 from homeassistant.components.climate.const import (
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_PRESET_MODE,
-    PRESET_HOME, PRESET_AWAY, HVACMode, HVACAction)
+    PRESET_HOME, PRESET_AWAY, HVACMode, HVACAction, ClimateEntityFeature)
 
 from homeassistant.const import (
     ATTR_FRIENDLY_NAME, ATTR_TEMPERATURE, UnitOfTemperature)
@@ -41,7 +40,7 @@ class HeatmiserWifi(ClimateEntity):
 
     @property
     def supported_features(self):
-        return SUPPORT_TARGET_TEMPERATURE | SUPPORT_PRESET_MODE
+        return ClimateEntityFeature.TARGET_TEMPERATURE | SUPPORT_PRESET_MODE
 
     @property
     def temperature_unit(self):
