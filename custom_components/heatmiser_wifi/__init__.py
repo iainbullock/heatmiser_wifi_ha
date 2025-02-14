@@ -3,6 +3,7 @@ from __future__ import annotations
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+from homeassistant.helpers.discovery import load_platform
 from heatmiser_wifi import Heatmiser
 from homeassistant.components.climate import (ClimateEntity)
 
@@ -52,10 +53,15 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
     heatmiser.disconnect()
 
-    hass.helpers.discovery.load_platform('climate', DOMAIN, {}, config)
-    hass.helpers.discovery.load_platform('sensor', DOMAIN, {}, config)
-    hass.helpers.discovery.load_platform('switch', DOMAIN, {}, config)
-    hass.helpers.discovery.load_platform('number', DOMAIN, {}, config)
+    #hass.helpers.discovery.load_platform('climate', DOMAIN, {}, config)
+    #hass.helpers.discovery.load_platform('sensor', DOMAIN, {}, config)
+    #hass.helpers.discovery.load_platform('switch', DOMAIN, {}, config)
+    #hass.helpers.discovery.load_platform('number', DOMAIN, {}, config)
+
+    load_platform(hass, 'climate', DOMAIN, {}, config)
+    load_platform(hass, 'sensor', DOMAIN, {}, config)
+    load_platform(hass, 'switch', DOMAIN, {}, config)
+    load_platform(hass, 'number', DOMAIN, {}, config)
 
     def set_value(call):
         name = call.data.get("name")
