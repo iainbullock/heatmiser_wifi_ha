@@ -181,9 +181,9 @@ class air_temp_sensor(SensorEntity):
     def name(self) -> str:
         return self.hass.data[DOMAIN]['name'] + '_air_temp'
 
-    @property
-    def device_class(self) -> str:
-        return SensorDeviceClass.TEMPERATURE
+    #@property
+    #def device_class(self) -> str:
+    #    return SensorDeviceClass.TEMPERATURE
 
     @property
     def suggested_unit_of_measurement(self) -> str:

@@ -7,13 +7,10 @@ from heatmiser_wifi import Heatmiser
 from homeassistant.components.climate import (ClimateEntity)
 
 from homeassistant.components.climate.const import (
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_PRESET_MODE, HVAC_MODE_OFF,
-    HVAC_MODE_HEAT, CURRENT_HVAC_OFF, CURRENT_HVAC_HEAT,
-    CURRENT_HVAC_IDLE, PRESET_HOME, PRESET_AWAY)
+    PRESET_HOME, PRESET_AWAY, HVACMode, HVACAction, ClimateEntityFeature)
 
 from homeassistant.const import (
-    TEMP_CELSIUS, TEMP_FAHRENHEIT, 
-    ATTR_FRIENDLY_NAME, ATTR_TEMPERATURE)
+    ATTR_FRIENDLY_NAME, ATTR_TEMPERATURE, UnitOfTemperature)
 
 import logging
 _LOGGER = logging.getLogger(__name__)
@@ -43,13 +40,13 @@ class HeatmiserWifi(ClimateEntity):
 
     @property
     def supported_features(self):
-        return SUPPORT_TARGET_TEMPERATURE | SUPPORT_PRESET_MODE
+        return ClimateEntityFeature.TARGET_TEMPERATURE | ClimateEntityFeature.PRESET_MODE
 
     @property
     def temperature_unit(self):
         if self.hass.data[DOMAIN]['heatmiser_info']['temperature_format'] == 'Celsius':
-            return TEMP_CELSIUS
-        return TEMP_FAHRENHEIT
+            return UnitOfTemperature.CELSIUS
+        return UnitOfTemperature.FAHRENHEIT
 
     @property
     def current_temperature(self):
@@ -88,12 +85,12 @@ class HeatmiserWifi(ClimateEntity):
     @property
     def hvac_mode(self):
         if self.hass.data[DOMAIN]['heatmiser_info']['on_off'] == 'Off':
-            return HVAC_MODE_OFF
-        return HVAC_MODE_HEAT
+            return HVACMode.OFF
+        return HVACMode.HEAT
 
     @property
     def hvac_modes(self):
-        return [HVAC_MODE_OFF, HVAC_MODE_HEAT]
+        return [HVACMode.OFF, HVACMode.HEAT]
 
     @property
     def preset_mode(self):
@@ -113,10 +110,10 @@ class HeatmiserWifi(ClimateEntity):
     @property
     def hvac_action(self):
         if self.hass.data[DOMAIN]['heatmiser_info']['on_off'] == 'Off':
-            return CURRENT_HVAC_OFF
+            return HVACAction.OFF
         elif self.hass.data[DOMAIN]['heatmiser_info']['heating_is_currently_on']:
-            return CURRENT_HVAC_HEAT
-        return CURRENT_HVAC_IDLE
+            return HVACAction.HEATING
+        return HVACAction.IDLE
 
     def set_temperature(self, **kwargs):
         temperature = kwargs.get(ATTR_TEMPERATURE)
@@ -128,9 +125,9 @@ class HeatmiserWifi(ClimateEntity):
 
     def set_hvac_mode(self, hvac_mode):
         on_off = 'On'
-        if hvac_mode == HVAC_MODE_OFF:
+        if hvac_mode == HVACMode.OFF:
             on_off = 'Off'
-        elif hvac_mode != HVAC_MODE_HEAT:
+        elif hvac_mode != HVACMode.HEAT:
             return # Invalid mode return
         self.hass.data[DOMAIN]['heatmiser'].connect()
         self.hass.data[DOMAIN]['heatmiser'].set_value('on_off', on_off)
