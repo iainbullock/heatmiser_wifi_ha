@@ -53,11 +53,6 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
 
     heatmiser.disconnect()
 
-    #hass.helpers.discovery.load_platform('climate', DOMAIN, {}, config)
-    #hass.helpers.discovery.load_platform('sensor', DOMAIN, {}, config)
-    #hass.helpers.discovery.load_platform('switch', DOMAIN, {}, config)
-    #hass.helpers.discovery.load_platform('number', DOMAIN, {}, config)
-
     load_platform(hass, 'climate', DOMAIN, {}, config)
     load_platform(hass, 'sensor', DOMAIN, {}, config)
     load_platform(hass, 'switch', DOMAIN, {}, config)
