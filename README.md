@@ -36,7 +36,7 @@ Alternatively copy the heatmiser_wifi directory and its contents to the
 Home Assistant custom_components directory.
 
 ## Configuration
-Add following configuration to Home Assistant configuration.yaml
+Add following configuration to Home Assistant configuration.yaml. Note this is a change if updating from the original midstar version https://github.com/iainbullock/heatmiser_wifi_ha/issues/6#issuecomment-2733449203
 
     heatmiser_wifi:
       host:          <mandatory - hostname or ip address>
